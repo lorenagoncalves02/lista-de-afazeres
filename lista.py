@@ -19,19 +19,34 @@ while loop == True:
     if opcao == 1:
         tarefa = input("Qual é a sua tarefa? ")
         lista.append(tarefa)
+        add = input("Você deseja adicionar mais alguma tarefa?")
+        if add == "sim":
+            tarefa = input("Qual é a sua tarefa? ")
+            lista.append(tarefa)
+            
     
     elif opcao == 2:
         for tarefa in lista:
             print(tarefa)
 
+
     elif opcao == 3:
         contador = 0
-        
+
+        for x in lista:
+            print(f"""{contador}-{x}""")
+            contador = contador + 1
+
+        marcar = int(input("Qual item você deseja marcar como concluído?"))
+        lista[marcar] = lista[marcar] + " ✓"
+        print(f"Item N°{marcar} removido com sucesso")
+
 
 
     elif opcao == 4:
-        remover = input("Qual item você quer remover? ")
-        lista.remove(remover)
+        remover = int(input("Qual item você deseja remover? (digite o número do item)"))
+        lista.pop(remover)
+        print(lista)
         
 
     elif opcao == 0:
