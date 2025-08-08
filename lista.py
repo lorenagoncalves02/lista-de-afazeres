@@ -1,4 +1,5 @@
 lista = []
+import json
 
 loop = True
 
@@ -31,6 +32,7 @@ while loop == True:
                 for tarefa in lista:
                     arquivo.write(tarefa + "\n")
             
+
     
     elif opcao == 2:
         for tarefa in lista:
@@ -46,14 +48,16 @@ while loop == True:
 
         marcar = int(input("Qual item você deseja marcar como concluído?"))
         lista[marcar] = lista[marcar] + " ✓"
-        print(lista)
+        for percorrer in lista:
+            print(percorrer)
 
 
 
     elif opcao == 4:
         remover = int(input("Qual item você deseja remover? (digite o número do item)"))
         lista.pop(remover)
-        print(lista)
+        for percorrer in lista:
+            print(lista)
         
         
 
