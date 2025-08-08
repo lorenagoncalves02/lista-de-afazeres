@@ -19,10 +19,17 @@ while loop == True:
     if opcao == 1:
         tarefa = input("Qual é a sua tarefa? ")
         lista.append(tarefa)
+        with open("arquivo.txt", "w") as arquivo:
+            for tarefa in lista:
+                arquivo.write(tarefa + "\n")
+
         add = input("Você deseja adicionar mais alguma tarefa?")
         if add == "sim":
             tarefa = input("Qual é a sua tarefa? ")
             lista.append(tarefa)
+            with open("arquivo.txt", "w") as arquivo:
+                for tarefa in lista:
+                    arquivo.write(tarefa + "\n")
             
     
     elif opcao == 2:
@@ -39,7 +46,7 @@ while loop == True:
 
         marcar = int(input("Qual item você deseja marcar como concluído?"))
         lista[marcar] = lista[marcar] + " ✓"
-        print(f"Item N°{marcar} removido com sucesso")
+        print(lista)
 
 
 
@@ -48,9 +55,22 @@ while loop == True:
         lista.pop(remover)
         print(lista)
         
+        
 
     elif opcao == 0:
         loop = False
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
